@@ -8,30 +8,96 @@
     <title>Title Page</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/darkly/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <link rel="stylesheet" media=screen href="css/main.css">
 
 </head>
 
-<body id="map_canvas" ng-controller="IndexController">
+<body ng-controller="IndexController">
+    <!--Intro Container-->
+    <div class="introContainer">
 
-    <!--    Json Containor tags-->
-    <div class="angular-google-maps-container">
-       
-       
-        <!--     Google Map  -->
-        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-            
-            <ui-gmap-markers
-                models="chipotleData"
-                coords="'address'">
-            </ui-gmap-markers>
-            
-        </ui-gmap-google-map>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Chipotle Finder</h1>
+                <p>Find the nearest chipotle</p>
+                <p>
+                    <a class="btn btn-primary btn-lg">Commence the hunt</a>
+                </p>
+            </div>
+        </div>
     </div>
 
+    <!--Main Container-->
+    <div class="mainContainer">
+
+
+        <!--Main Nav-->
+        <div class="row">
+            <nav class="navbar navbar-primary navbar-fixed-top">
+                <div class="container-fluid">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="active homeBtn"><a href="#">Home</a></li>
+
+                        <!--
+                        <li role="presentation"><a class="AddAccountBtn" data-bind="click: $root.AddAccount" href="#"><span class="glyphicon-user glyphicon"></span> Create an Account</a></li>
+                        <li data-bind="visible: login() == 'logged.in'" class="LinkTwitterBtn" role="presentation"><a href="#" data-toggle="modal" data-target="#linkTwitterModal"><span class="glyphicon glyphicon-refresh"></span> Link your Twitter</a></li>
+                            -->
+                    </ul>
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+
+        <!--Home Page-->
+        <div class="homePage">
+
+            <!--  Page Header Row         -->
+            <div class="row pageHeaderRow">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <!--     Page header   -->
+                    <div class="page-header center">
+                        <h1>Enter your Zip code</h1>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--     Input Box Row    -->
+            <div class="row inputBoxRow">
+                <div class="col-md-12 col-lg-12 col-sm-12 center">
+
+                    <!--       Input Box     -->
+                    <div class="input-group center" id="inputZip">
+                        <input center type="text" class="form-control"  placeholder="Enter Zip Code">
+                        <span class="input-group-btn">
+        <button class="btn btn-default" id="goBtn"type="button">Go!</button>
+      </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--       Google Map-->
+            <div class="row" id="map_canvas">
+                <!--    Json Google Maps Container tags-->
+                <div class="angular-google-maps-container">
+
+                    <!--     Google Map  -->
+                    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+
+                        <ui-gmap-markers models="chipotleData" coords="'address'">
+                        </ui-gmap-markers>
+
+                    </ui-gmap-google-map>
+                </div>
+            </div>
 
 
 
@@ -39,8 +105,8 @@
 
 
 
-
-
+        </div>
+    </div>
     <!--  Script Tags     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
@@ -58,6 +124,7 @@
 
 
     <!--  Js File Tags  -->
+    <script src="js/pageFlow.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chipotle.service.js"></script>
     <script src="js/index.ctrl.js"></script>

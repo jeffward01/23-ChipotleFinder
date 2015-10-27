@@ -21,3 +21,35 @@ body,
     right: 0;
     left: 0;
 }
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pageHeaderRow {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.inputBoxRow {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 15%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#inputZip {
+    width: 100%;
+    border: 1px solid #ccc;
+    transition: width 1s;
+}
+
+#inputZip.clicked {
+    width: 150%;
+}
+
+#goBtn {
+    position: relative;
+}

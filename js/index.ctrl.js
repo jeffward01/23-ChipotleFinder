@@ -8,7 +8,7 @@ angular.module('app').controller('IndexController', function ($scope, $http, chi
             latitude: 45,
             longitude: -73
         },
-            zoom: 8    
+            zoom: 11  
     };
 
     //Gets search Zip Code and Returns Data
