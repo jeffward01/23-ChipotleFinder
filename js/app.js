@@ -1,2 +1,2 @@
 //Angular Module App
-angular.module('app', []);
+angular.module('app', ['uiGmapgoogle-maps']);
