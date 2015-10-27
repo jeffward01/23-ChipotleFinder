@@ -13,8 +13,9 @@ angular.module('app').controller('IndexController', function ($scope, $http, chi
 
     //Gets search Zip Code and Returns Data
     chipotleService.getRestaurants(92101).then(function (data) {
-        $scope.chipotleData = data;
-        
+        $scope.chipotleData = data;  
+        //Success Message
+        successMsg("Locations Found");
         
         //Repositions Google Chrome View to closest search results (Array index[0])
         $scope.map.center={
@@ -27,3 +28,32 @@ angular.module('app').controller('IndexController', function ($scope, $http, chi
 
 
 }); // End Controller
+
+
+
+
+
+
+function successMsg(string){
+    
+     Command: toastr["success"](string);
+
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-full-width",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+}
