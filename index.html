@@ -22,7 +22,7 @@
         <div class="jumbotron center">
             <div class="container">
                 <h1>Chipotle Finder</h1>
-               
+
             </div>
         </div>
     </div>
@@ -68,9 +68,9 @@
 
                     <!--       Input Box     -->
                     <div class="input-group center" id="inputZip">
-                        <input center type="text" class="form-control"  placeholder="Enter Zip Code">
+                        <input center type="text" class="form-control" ng-model="zipcode" placeholder="Enter Zip Code">
                         <span class="input-group-btn">
-        <button class="btn btn-default" id="goBtn"type="button">Go!</button>
+        <button class="btn btn-default" ng-click="SearchLocations()" id="goBtn"type="button">Go!</button>
       </span>
                     </div>
                 </div>
@@ -82,14 +82,14 @@
 
 
             <!--       Google Map-->
-            <div  class="row" id="map_canvas">
+            <div class="row" id="map_canvas">
                 <!--    Json Google Maps Container tags-->
                 <div class="angular-google-maps-container">
 
                     <!--     Google Map  -->
                     <ui-gmap-google-map center='map.center' zoom='map.zoom'>
 
-                        <ui-gmap-markers models="chipotleData" coords="'address'" dorebuildall="true">
+                        <ui-gmap-markers models="chipotleData" coords="'address'">
                         </ui-gmap-markers>
 
                     </ui-gmap-google-map>
